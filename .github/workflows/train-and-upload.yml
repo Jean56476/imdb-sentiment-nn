@@ -26,4 +26,5 @@ jobs:
       - name: Upload to Hugging Face Hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_ENDPOINT: https://hf-mirror.com
         run: python upload_to_hf.py
