@@ -26,12 +26,13 @@ jobs:
       - name: Upload to Hugging Face Hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: python -c "
+        run: |
+          python -c "
 import os
 from huggingface_hub import HfApi
 
 token = os.environ['HF_TOKEN']
-repo_id = 'Jean256/imdb-sentiment-nn'   # 改成你的 Hugging Face 用户名
+repo_id = 'Jean256/imdb-sentiment-nn'   # 改成你实际的 Hugging Face 用户名
 api = HfApi()
 
 api.create_repo(repo_id, token=token, exist_ok=True)
